@@ -7,6 +7,11 @@ import { PrimeLogin } from "../prime-login/prime-login";
 import { PrimeInvalid } from "../prime-invalid/prime-invalid";
 import { useCookies } from "react-cookie";
 import { useEffect } from "react";
+import { CrudIndex } from "../../crud-operation/crud-index";
+import { CrudCreate } from "../../crud-operation/crud-create";
+import { CrudDetails } from "../../crud-operation/crud-details";
+import { CrudEdit } from "../../crud-operation/crud-edit";
+
 
 export function PrimeIndex() {
     const [cookie, setCookie,removeCookie] = useCookies();
@@ -25,6 +30,7 @@ export function PrimeIndex() {
                     </div>
                     <nav className="d-flex align-center">
                         <div className="me-3"><Link to="home" className="btn text-white">Home</Link></div>
+                        <div className="me-3"><Link to="products" className="btn text-white">Products</Link></div>
                         <div className="me-3"><Link to="userregister" className="btn text-white">Register</Link></div>
                         <div className="me-3"><Link to="category/men's clothing" className="btn text-white">Men's Fashion</Link></div>
                         <div className="me-3"><Link to="category/women's clothing" className="btn text-white">Women's Fashion</Link></div>
@@ -54,6 +60,11 @@ export function PrimeIndex() {
                         <Route path="details/:id" element={<PrimeDetails/>}/>
                         <Route path="login" element={<PrimeLogin/>}/>
                         <Route path="invalid" element={<PrimeInvalid/>}/>
+                        <Route path="/products" element={<CrudIndex/>}/>
+                        <Route path="NewProduct" element={<CrudCreate/>}/>
+                        <Route path="cruddetails/:id" element={<CrudDetails/>}/>
+                        <Route path="crudedit/:id" element={<CrudEdit/>} />
+                        
                     </Routes>
                 </div>
 

@@ -37,7 +37,7 @@ export function PrimeLogin() {
                             (values) => {
                                 axios({
                                     method: "get",
-                                    url: "http://127.0.0.1:5000/users",
+                                    url: "http://127.0.0.1:8000/users",
                                 })
                                     .then(response => {
                                         for (var user of response.data) {

@@ -1,10 +1,36 @@
 import axios from "axios";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
 export function PrimeRegister() {
     const navigate = useNavigate();
+    const [users, setUsers] = useState([]);
+    const [userError, setUserError] = useState("");
+    const [bgColor, setBgColor] = useState({backgroundColor:""});
+
+    useEffect(()=>{
+        axios({
+            method:"get",
+            url:"http://127.0.0.1:8000/users"
+        })
+        .then(response=>{
+            setUsers(response.data)
+        })
+    },[])
+    function VeryfyUserId(e){
+        for(var user of users){
+            if(user.UserId==e.target.value){
+               setUserError("User Id Taken Try Another ");
+               setBgColor("text-danger");
+               break;
+            } else{
+                setUserError(" User Id Available");
+                setBgColor("text-success");
+            }
+        }
+    }
     return (
         <div className="container-fluid d-flex justify-content-center"  >
            
@@ -63,7 +89,7 @@ onSubmit={
     (values) => {
         axios({
             method:"post",
-            url:`http://127.0.0.1:5000/registeruser`,
+            url:`http://127.0.0.1:8000/registeruser`,
             data: values
         })
         .then(()=>{
@@ -83,8 +109,9 @@ onSubmit={
             <dl>
                 <dt className="form-label">User ID</dt>
                 <dd >
-                    <Field name="UserId" type="text" className="form-control border-bottom"></Field>
+                    <Field name="UserId" type="text" onKeyUp={VeryfyUserId} className="form-control border-bottom"></Field>
                 </dd>
+                <dd className={bgColor}>{userError}</dd>
                 <dd className="text-danger">
                     <ErrorMessage name="UserId"></ErrorMessage>
                 </dd>
