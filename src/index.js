@@ -7,12 +7,16 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 import { PrimeIndex } from './components/prime-index/prime-index';
 import { CookiesProvider } from 'react-cookie';
+import { Provider } from 'react-redux';
+import Store from './components/stores/Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <CookiesProvider>
-      <PrimeIndex />
+      <Provider store={Store}>
+        <PrimeIndex />
+      </Provider>
     </CookiesProvider>
   </React.StrictMode>
 );

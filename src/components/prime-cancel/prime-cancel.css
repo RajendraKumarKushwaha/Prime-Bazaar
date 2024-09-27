@@ -1,0 +1,43 @@
+/* src/PrimeCancel.css */
+
+.cancel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8d7da; /* Light red background */
+    text-align: center;
+}
+
+.cancel-title {
+    font-size: 2.5rem;
+    color: #dc3545; /* Bootstrap danger color */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.cancel-message {
+    font-size: 1.2rem;
+    color: #721c24; /* Darker red for contrast */
+    margin-bottom: 30px;
+}
+
+.cancel-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cancel-button {
+    padding: 10px 20px;
+    background-color: #dc3545; /* Danger color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cancel-button:hover {
+    background-color: #c82333; /* Darker shade on hover */
+}

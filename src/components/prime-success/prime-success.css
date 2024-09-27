@@ -1,0 +1,43 @@
+/* src/PrimeSuccess.css */
+
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.success-title {
+    font-size: 2.5rem;
+    color: #28a745;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.success-message {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.success-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.success-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.success-button:hover {
+    background-color: #218838;
+}

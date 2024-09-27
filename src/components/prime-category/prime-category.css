@@ -1,0 +1,13 @@
+.background {
+    background-color: rgb(199, 198, 198);
+   }
+   .card-img-wrapper {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+   .row {
+       margin-top: 50px;
+   }
+   
+   

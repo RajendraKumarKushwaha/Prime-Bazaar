@@ -11,6 +11,11 @@ import { CrudIndex } from "../../crud-operation/crud-index";
 import { CrudCreate } from "../../crud-operation/crud-create";
 import { CrudDetails } from "../../crud-operation/crud-details";
 import { CrudEdit } from "../../crud-operation/crud-edit";
+import { CartItems } from "../prime-cartItems/prime-cartItems";
+import { CartProduct } from "../prime-cartProduct/prime-cartProduct";
+import { PrimeSuccess } from "../prime-success/prime-sucess";
+import { PrimeCancel } from "../prime-cancel/prime-cancel";
+
 
 
 export function PrimeIndex() {
@@ -44,7 +49,7 @@ export function PrimeIndex() {
                         <span  className="bi bi-search me-3"></span>
                         <span className="bi bi-person me-3"></span>
                         <span className="bi bi-heart me-3"></span>
-                        <span className="bi bi-cart4 me-3"></span>
+                        <span className="me-3"><CartItems/></span>
 
                     </div>
                 </header>
@@ -64,6 +69,10 @@ export function PrimeIndex() {
                         <Route path="NewProduct" element={<CrudCreate/>}/>
                         <Route path="cruddetails/:id" element={<CrudDetails/>}/>
                         <Route path="crudedit/:id" element={<CrudEdit/>} />
+                        <Route path="/cartProduct" element={<CartProduct/>}/>
+                        <Route path="/success" element={<PrimeSuccess/>}/>
+                        <Route path="/cancel" element={<PrimeCancel/>}/>
+                        
                         
                     </Routes>
                 </div>
