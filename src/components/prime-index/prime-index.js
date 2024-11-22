@@ -51,7 +51,7 @@ export function PrimeIndex() {
                 <header>
                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
                         <div className="container-fluid">
-                        <span className="me-3 d-block d-md-none"><Link to="/login" className="btn btn-primary text-white">SignUp</Link></span>
+                        <span className="me-3 d-block d-md-none"><Link to="/login" className="btn btn-outline-primary text-white">SignUp</Link></span>
                        
 
                             

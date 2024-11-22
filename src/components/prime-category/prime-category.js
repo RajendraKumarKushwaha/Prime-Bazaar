@@ -54,7 +54,7 @@ export function PrimeCategory() {
                                     </dl>
                                 </div>
                             </div>
-                            <button className="btn btn-info"><Link to={`/details/` + product.id} className="btn text-white"><b>Details</b></Link></button>
+                            <button className="btn btn-warning"><Link to={`/details/` + product.id} className="btn text-white"><b>Details</b></Link></button>
                         </div>
 
                     )
