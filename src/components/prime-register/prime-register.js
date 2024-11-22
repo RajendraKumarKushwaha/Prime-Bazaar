@@ -33,17 +33,17 @@ export function PrimeRegister() {
         }
     }
     return (
-        <div className="container-fluid d-flex justify-content-center"  >
+        <div className="container-fluid d-flex justify-content-center  w-100 w-lg-25"  >
 
 
-            <div className="left w-25">
+            <div className="left w-50 d-none d-lg-block">
                 <div className="bg-primary " style={{ height: "625px" }}>
                     <h2 className="p-4 text-white">Looks like you're new here!</h2>
                     <p className="p-4 text-white">Sign up with Register User to get started</p>
                 </div>
 
             </div>
-            <div className="right w-25">
+            <div className="right w-100 w-lg-25 ">
                 <Formik
 
                     initialValues={
@@ -104,7 +104,7 @@ export function PrimeRegister() {
 
                 >
                     {
-                        <Form className="d-flex justify-content-center border border-end pe-4 ps-4" >
+                        <Form className="d-flex justify-content-center border border-end pe-4 ps-4 " >
                             <div className=" text-center w-100 d-flex  flex-column justify-content-center align-content-center">
                                 <h4 className="bi bi-person-fill">User Registraion</h4>
                                 <dl>
