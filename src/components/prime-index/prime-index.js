@@ -19,12 +19,14 @@ import { PrimeCancel } from "../prime-cancel/prime-cancel";
 
 
 export function PrimeIndex() {
-    const [cookie, setCookie,removeCookie] = useCookies();
-   
-    function signOutClick(){
+
+
+    const [cookie, setCookie, removeCookie] = useCookies();
+
+    function signOutClick() {
         removeCookie("userId")
     }
-   
+
 
     return (
         <div className="container-fluid">
@@ -33,47 +35,92 @@ export function PrimeIndex() {
                     <div>
                         <h2>Prime Bazaar</h2>
                     </div>
-                    <nav className="d-flex align-center">
-                        <div className="me-3"><Link to="home" className="btn text-white">Home</Link></div>
-                        <div className="me-3"><Link to="products" className="btn text-white">Products</Link></div>
-                        <div className="me-3"><Link to="userregister" className="btn text-white">Register</Link></div>
-                        <div className="me-3"><Link to="category/men's clothing" className="btn text-white">Men's Fashion</Link></div>
-                        <div className="me-3"><Link to="category/women's clothing" className="btn text-white">Women's Fashion</Link></div>
-                        <div className="me-3"><Link to="category/jewelery" className="btn text-white">Jewelery</Link></div>
-                        <div className="me-3"><Link to="category/electronics" className="btn text-white">Electronics</Link></div>
-                    </nav>
-                    <div className="d-flex align-center">
-                    <span className="me-3"><Link to="/login" className="btn btn-primary text-white">SignUp</Link></span>
-                        <span className="me-3"><button className="btn btn-danger" onClick={signOutClick}>SignOut</button></span>
+
+                    <div className="d-flex ">
+                        <span className="me-3 d-none d-md-inline"><Link to="/login" className="btn btn-primary text-white">SignUp</Link></span>
+                        <span className="me-3 d-none d-md-inline"><button className="btn btn-danger" onClick={signOutClick}>SignOut</button></span>
                         <span className="me-3">{cookie["userId"]}</span>
-                        <span  className="bi bi-search me-3"></span>
-                        <span className="bi bi-person me-3"></span>
-                        <span className="bi bi-heart me-3"></span>
-                        <span className="me-3"><CartItems/></span>
+                        <span className="bi bi-search me-3 d-none d-md-inline"></span>
+                        <span className="bi bi-person me-3 d-none d-md-inline"></span>
+                        <span className="bi bi-heart me-3 d-none d-md-inline"></span>
+                        <span className="me-3"><CartItems /></span>
 
                     </div>
                 </header>
+               
+                <header>
+                    <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+                        <div className="container-fluid">
+                        <span className="me-3 d-block d-md-none"><Link to="/login" className="btn btn-primary text-white">SignUp</Link></span>
+                       
+
+                            
+                            <button
+                                className="navbar-toggler"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav"
+                                aria-controls="navbarNav"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation"
+                            >
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+
+                           
+                            <div className="collapse navbar-collapse" id="navbarNav">
+                                <ul className="navbar-nav mx-auto">
+                                    <li className="nav-item">
+                                        <Link to="home" className="nav-link text-white">Home</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="products" className="nav-link text-white">Products</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="userregister" className="nav-link text-white">Register</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="category/men's clothing" className="nav-link text-white">Men's Fashion</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="category/women's clothing" className="nav-link text-white">Women's Fashion</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="category/jewelery" className="nav-link text-white">Jewelery</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="category/electronics" className="nav-link text-white">Electronics</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                           
+                        </div>
+                        
+                    </nav>
+                </header>
+
+
                 <div className="bg-light text-warning fw-bold text-center p-1 mt-2 ">
                     Your One-Stop Shop for Everything You Need
                 </div>
                 <div className="mt-4">
                     <Routes>
-                        <Route path="/" element={<PrimeHome/>}></Route>
-                        <Route path="home" element={<PrimeHome/>}></Route>
-                        <Route path="userregister" element={<PrimeRegister/>}/>
-                        <Route path="category/:catname" element={<PrimeCategory/>}/>
-                        <Route path="details/:id" element={<PrimeDetails/>}/>
-                        <Route path="login" element={<PrimeLogin/>}/>
-                        <Route path="invalid" element={<PrimeInvalid/>}/>
-                        <Route path="/products" element={<CrudIndex/>}/>
-                        <Route path="NewProduct" element={<CrudCreate/>}/>
-                        <Route path="cruddetails/:id" element={<CrudDetails/>}/>
-                        <Route path="crudedit/:id" element={<CrudEdit/>} />
-                        <Route path="/cartProduct" element={<CartProduct/>}/>
-                        <Route path="/success" element={<PrimeSuccess/>}/>
-                        <Route path="/cancel" element={<PrimeCancel/>}/>
-                        
-                        
+                        <Route path="/" element={<PrimeHome />}></Route>
+                        <Route path="home" element={<PrimeHome />}></Route>
+                        <Route path="userregister" element={<PrimeRegister />} />
+                        <Route path="category/:catname" element={<PrimeCategory />} />
+                        <Route path="details/:id" element={<PrimeDetails />} />
+                        <Route path="login" element={<PrimeLogin />} />
+                        <Route path="invalid" element={<PrimeInvalid />} />
+                        <Route path="/products" element={<CrudIndex />} />
+                        <Route path="NewProduct" element={<CrudCreate />} />
+                        <Route path="cruddetails/:id" element={<CrudDetails />} />
+                        <Route path="crudedit/:id" element={<CrudEdit />} />
+                        <Route path="/cartProduct" element={<CartProduct />} />
+                        <Route path="/success" element={<PrimeSuccess />} />
+                        <Route path="/cancel" element={<PrimeCancel />} />
+
+
                     </Routes>
                 </div>
 

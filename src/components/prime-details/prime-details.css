@@ -1,20 +1,22 @@
 .background {
     background-color: rgb(199, 198, 198);
-    height: 100%;
-   }
-   .card-img-wrapper {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-      
-   }
-   /* .row {
-       margin-top: 50px;
-   } */
-   
-   .spinner-border {
+    min-height: 100vh; /* Ensures the background covers the viewport */
+    padding: 15px; /* Adds spacing on mobile */
+}
+
+.card-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-fluid {
+    max-height: 450px;
+    max-width: 100%; /* Makes the image responsive */
+}
+
+.spinner-border {
     width: 1.5rem;
     height: 1.5rem;
     border-width: 0.2em;
 }
-   

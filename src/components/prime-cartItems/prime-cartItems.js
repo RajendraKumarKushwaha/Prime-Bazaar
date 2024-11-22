@@ -14,11 +14,13 @@ export function CartItems() {
 
     }, [])
     return (
+        
             <div>
                 <button className=" btn btn-outline-dark text-white position-relative">
                     <span> <Link to='/cartProduct'><span className="bi bi-cart4 text-white"></span></Link></span>
                     <span className="badge rounded-circle bg-info position-absolute bottom-50 space-left2">{count}</span>
-                </button>Cart
+                </button> 
+                 {/* Cart  */}
             </div>
            
     )

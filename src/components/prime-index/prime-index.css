@@ -1,0 +1,8 @@
+.navbar-toggler-icon {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    display: block;
+    margin: 5px 0;
+    transition: 0.3s;
+}

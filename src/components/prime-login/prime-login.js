@@ -10,12 +10,12 @@ export function PrimeLogin() {
     return (
         <div className="container-fluid">
             <div className="row d-flex justify-content-center align-content-center">
-                <div className="col-4 bg-primary text-white p-4 me-0">
+                <div className="col-4 bg-primary text-white p-4 me-0 d-none d-lg-block">
                     <h2>Login</h2>
                     <p>Get access to your Orders, Wishlist and Recommadations</p>
 
                 </div>
-                <div className="col-4">
+                <div className="col-12 col-lg-4">
                     <Formik
                         initialValues={
                             {

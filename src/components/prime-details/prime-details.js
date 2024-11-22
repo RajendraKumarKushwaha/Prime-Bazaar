@@ -16,7 +16,7 @@ export function PrimeDetails() {
         setLoading(true);
         dispatch(addToCart(product))
         setTimeout(() => {
-            setLoading(false); // Set loading to false after a short delay
+            setLoading(false); 
         }, 1000); // 
 
     }
@@ -30,17 +30,16 @@ export function PrimeDetails() {
             })
     }, [params.id])
     return (
-        <div className="container-fluid background">
 
+        <div className="container-fluid background">
             <div className="row">
-                <div className="col-5">
-                    <div className="card mt-4 border border-0  bg-white  " style={{ width: "450px" }}>
+               
+                <div className="col-md-5 col-12">
+                    <div className="card mt-4 border border-0 bg-white mx-auto" style={{ maxWidth: "450px" }}>
                         <div className="card-img-wrapper">
-                            <img src={product.image} alt="" height={"450px"} width={"450px"} />
+                            <img src={product.image} alt="" className="img-fluid" />
                         </div>
-                        {/* <button className="btn btn-warning mt-4" onClick={(e) => handleAddToCart(product)}>Add to Cart</button>
-                    */}
-                      <button className="btn btn-warning mt-4" onClick={() => handleAddToCart(product)}>
+                        <button className="btn btn-warning mt-4 w-100" onClick={() => handleAddToCart(product)}>
                             {loading ? (
                                 <div className="spinner-border text-light" role="status">
                                     <span className="visually-hidden">Loading...</span>
@@ -48,40 +47,54 @@ export function PrimeDetails() {
                             ) : (
                                 "Add to Cart"
                             )}
-                        </button>   
-
+                        </button>
                     </div>
-
-
                 </div>
-                <div className="col-7 mt-4">
+
+              
+                <div className="col-md-7 col-12 mt-4">
                     <div>
-                        <h3>{product.title}</h3>
-                        <h3>{(product.category)}</h3>
+                        <h3 className="text-center text-md-start">{product.title}</h3>
+                        <h3 className="text-center text-md-start">{product.category}</h3>
                         <dl>
                             <dt className="text-success">Special Price</dt>
-                            <dd><h4>&#8377; {product.price}</h4></dd>
-                            <dt><h3>Product Description</h3></dt>
-                            <dd><h6>{product.description}</h6></dd>
+                            <dd>
+                                <h4>&#8377; {product.price}</h4>
+                            </dd>
+                            <dt>
+                                <h3>Product Description</h3>
+                            </dt>
+                            <dd>
+                                <h6>{product.description}</h6>
+                            </dd>
                         </dl>
-                        <div className="d-flex align-items-center">
-                            <h5 className="bg-success text-white m-1 p-1" style={{ width: "60px", borderRadius: "8px" }}> {product.rating.rate}
-                                <span className="bi bi-star-fill "></span>
+                        <div className="d-flex flex-column flex-md-row align-items-md-center align-items-start">
+                            <h5 className="bg-success text-white m-1 p-1 text-center" style={{ width: "60px", borderRadius: "8px" }}>
+                                {product.rating.rate}
+                                <span className="bi bi-star-fill"></span>
                             </h5>
-                            <h5><span>ratings and {product.rating.count} reviews</span></h5>
+                            <h5>
+                                <span>ratings and {product.rating.count} reviews</span>
+                            </h5>
                         </div>
-                        </div>
-                        <Link to={`/category/` + product.category}>back to category</Link>
+                    </div>
+                    <Link to={`/category/${product.category}`} className="d-block text-center mt-3">
+                        Back to Category
+                    </Link>
                 </div>
-
             </div>
 
-          
+         
             <div>
-                <PrimeAbout/>
+                <PrimeAbout />
             </div>
-
-
         </div>
+
+
+
+
+
+
+
     )
 }

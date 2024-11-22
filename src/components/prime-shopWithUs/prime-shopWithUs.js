@@ -4,8 +4,8 @@ export function ShopWithUs() {
             <div className="mt-4">
                 <h1 className="text-center">Why Shop With Us</h1>
                 <div className="row mt-4 ">
-                    <div className="col">
-                        <div className="card text-center p-2">
+                    <div className="col-md-4 col-12 mb-3">
+                        <div className="card text-center p-3">
                             <div className="fs-1 ">
                                 <span className="bi bi-truck"></span>
                             </div>
@@ -16,8 +16,8 @@ export function ShopWithUs() {
 
                         </div>
                     </div>
-                    <div className="col">
-                    <div className="card text-center p-2">
+                    <div className="col-md-4 col-12 mb-3">
+                    <div className="card text-center p-3">
                             <div className="fs-1 ">
                                 <span className="bi bi-tag"></span>
                             </div>
@@ -27,8 +27,8 @@ export function ShopWithUs() {
                         </div>
 
                     </div>
-                    <div className="col">
-                    <div className="card text-center p-2">
+                    <div className="col-md-4 col-12 mb-3">
+                    <div className="card text-center p-3">
                             <div className="fs-1 ">
                                 <span className="bi bi-shield-check"></span>
                             </div>
